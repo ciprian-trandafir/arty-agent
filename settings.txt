@@ -1,0 +1,3 @@
+sound=false
+last_score=1
+best_score=14
