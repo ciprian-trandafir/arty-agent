@@ -1,23 +1,24 @@
 ## Arty Agent 
-Arty Agent is a game in which you are shown a small picture and you have to look for it among 3 other forgeries.
 
-The game takes one minute and there are 14 pictures. Are you able to find them all before the time runs out?
+Arty Agent is an engaging and challenging game designed as a college project. In this game, players are presented with a series of 14 intriguing pictures, each containing a unique and distinctive art piece. The goal is to identify the genuine artwork hidden within a selection of three cleverly crafted forgeries.
 
-#### Files Structure
-* classes - classes that do not extend *JPanel* or *JFrame*.
-* frames - contains the **main game window** and extends JFrame. 
-* icons - here are the icons used by the entire game.
-* interfaces - interfaces that help us correctly implement **design patterns**.
-* panels - classes that extend *JPanel* class.
-* pictures - the directory that is browsed by the *iterator design pattern* and contains the pictures that the player needs to find.
-* sounds - contains the audio files that are played when the player chooses the correct picture or not.
-* tests - two tests with JUnit:
-    * Checking the correct implementation of the **Singleton** design pattern: the equality of two instances of the singleton object, using the getInstance() method;
-    * Checking the correct implementation of the **Iterator** design pattern: if the iterator is correctly browsing the pictures collection by initializing it and getting the first directory with pictures;
+### Files Structure
+The file structure of the Arty Agent game is organized in a logical and modular manner to promote code reusability and maintainability:
+
+* classes - This directory contains various classes that are not specifically related to the graphical user interface (GUI) components, such as utility classes, data models or game logic.
+* frames - The frames directory houses the main game window or frames. It likely contains the classes responsible for creating and managing the game's graphical user interface. These frames are crucial for displaying the game screens, menus, and any user interaction elements.
+* icons - In the icons directory, you will find the graphics files used as icons throughout the game. These icons could represent buttons, menu items, or any other graphical elements that require visual representation.
+* interfaces - This directory contains interfaces that aid in correctly implementing design patterns within the game. These interfaces define blueprints for classes to adhere to when implementing specific behaviors or functionalities.
+* panels -The panels directory contains classes that extend the JPanel class. These classes are responsible for creating individual panels or screens within the game interface. Each panel typically represents a different game state, such as the main menu, gameplay screen, or settings screen.
+* pictures - The pictures directory is an important component of the game. It likely houses the image files that the player needs to find or identify. The **Iterator** design pattern iterate through this directory to present the player with different pictures to analyze and select from.
+* sounds - This directory stores audio files used in the game. These audio files could include background music, sound effects, or voiceovers that play during specific game events, such as selecting the correct or incorrect picture.
+* tests - The tests directory contains JUnit tests for the game code:
+    * Checking the correct implementation of the **Singleton** design pattern: the equality of two instances of the singleton object using the getInstance() method.
+    * Checking the correct implementation of the **Iterator** design pattern: validating if the iterator correctly browses the pictures collection, initializing it, and retrieving the first directory with pictures.
 
 #### Design patterns
-* [Singleton](https://refactoring.guru/design-patterns/singleton) - Used when instantiating the *HomePanel* class.
-* [Iterator](https://refactoring.guru/design-patterns/iterator) - Used to scroll through the collection of pictures from which the player must search for a specific one.
-* [Memento](https://refactoring.guru/design-patterns/memento) - Store the player's score, and when the game ends, the value is written in a *settings.txt* file to to display it later on the homepage (*HomePanel* class).
-* [State](https://refactoring.guru/design-patterns/state) - Manage game state: **playing** or **idle**. **Playing** state is when the player is looking for the given picture and **Idle** state is when the player is in *HomePanel* or *SettingsPanel* class.
-* [Adapter](https://refactoring.guru/design-patterns/adapter) - With this pattern we can play several audio formats when the player chooses the searched picture correctly or not.
+* [Singleton](https://refactoring.guru/design-patterns/singleton) - The Singleton design pattern is used when instantiating the **HomePanel** class. The **Singleton** pattern ensures that only one instance of the HomePanel class can exist throughout the game. This is useful because the HomePanel class represents the main panel of the game's interface and is responsible for displaying the home screen, settings, and managing the game's overall flow. By using the Singleton pattern, it guarantees that there is a single instance of the HomePanel class, allowing consistent and centralized control over the game's user interface.
+* [Iterator](https://refactoring.guru/design-patterns/iterator) - The Iterator design pattern is employed to scroll through the collection of pictures from which the player must search for a specific one. The **pictures** directory contains a collection of pictures that the player needs to find. The Iterator pattern enables sequential access to these pictures, allowing the game to present them one by one to the player. This pattern simplifies the process of iterating over the collection, retrieving each picture, and providing an intuitive and organized gameplay experience.
+* [Memento](https://refactoring.guru/design-patterns/memento) - The Memento design pattern is utilized to store the player's score during gameplay. When the game ends, the player's score is saved, in a **settings.txt** file. This allows the game to remember the player's score and display it later on the homepage (HomePanel).
+* [State](https://refactoring.guru/design-patterns/state) - The State design pattern is used to manage the game's state, distinguishing between the **playing** state and the **idle** state. The playing state occurs when the player is actively searching for the given picture. On the other hand, the idle state is when the player is in the **Home** or **Settings** panel, where they are not actively engaged in the gameplay. By using the State pattern, the game can control and transition between different states, ensuring appropriate behaviors, interactions, and UI elements based on the current game state.
+* [Adapter](https://refactoring.guru/design-patterns/adapter) - The Adapter design pattern is employed in the game to play several audio formats when the player chooses the searched picture correctly or incorrectly. It allows for the adaptation of different audio formats to a common interface, enabling the game to play various audio files seamlessly. This pattern enhances the game's audio functionality by providing flexibility and compatibility with multiple audio formats, enhancing the player's experience when receiving feedback or alerts based on their choices.
