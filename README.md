@@ -1,6 +1,6 @@
 # Arty Agent
 
-Arty Agent is an engaging and challenging game designed as a college project. Players must identify genuine artworks hidden within a selection of cleverly crafted forgeries.
+[Arty Agent](https://www.mathsisfun.com/games/ninja/arty/) is a game designed for a college project. Players must identify genuine artworks hidden within a selection of cleverly crafted forgeries.
 
 ## File Structure
 
